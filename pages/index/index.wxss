@@ -1,0 +1,87 @@
+.coun {
+  width: 100%;
+  height: 200rpx;
+}
+.table {
+  width: 100%;
+  float: left;
+}
+.table1 {
+  width: 140rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background: #d9ebf9;
+  border: 1px solid  #dbdbdc;
+  box-sizing: border-box;
+  float: left;
+}
+.padding {
+  width: 190rpx !important;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.btn-cover {
+  width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  border: 1px solid #cccccc; 
+  text-align: center;
+  font-size: 35rpx;
+}
+.model {
+  width: 700rpx;
+  height: 826rpx;
+  position: fixed;
+  left: 20rpx;
+  top: 200rpx;
+  background: #f7f7f7;
+}
+.weui-cells__title {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0.77em 0 0.55em 30px;
+  color: #484848;
+  font-size: 30rpx;
+  position: relative;
+}
+.weui-cells {
+  position: relative;
+  margin-top: 1.17647059em;
+  line-height: 1.41176471;
+  font-size: 37rpx;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.weui-cells_after-title {
+  margin-top: 0;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid #ededed;
+}
+.weui-cell {
+  padding:0 20rpx 0 30px;
+  position:relative;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+  align-items:center;
+}
+.weui-cell_input {
+  padding-top:0;
+  padding-bottom:0;
+}
+.weui-input { 
+  width: 400rpx;
+}
+.weui-cell__hd {
+  position: absolute;
+}

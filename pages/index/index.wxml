@@ -1,0 +1,76 @@
+<view class='container'>
+  <view class='coun'>
+    <view class='table'>
+      <view wx:for="{{list}}" wx:key="item" wx:index="index">
+        <view class='table1 {{item==="时间" ? "padding":""}}'> {{item}}</view>
+      </view>
+      <checkbox-group bindchange="checkboxChange">
+        <label  wx:for="{{arr}}" wx:key="{{arrItem}}" wx:for-item="arrItem" wx:index="index">
+          <view class="weui-cell__hd" style='top:{{(index+1)*82}}rpx;left: 5rpx;' wx:if="{{checked ||isdelete}}">
+            <checkbox value="{{arrItem.oid}}" checked="{{item.checked}}" />
+          </view>
+          <view style='float: left;'>
+            <view class='table1'> {{arrItem.oid}}</view>
+            <view class='table1'> {{arrItem.uid}}</view>
+            <view class='table1'> {{arrItem.name}}</view>
+            <view class='table1'> {{arrItem.buytime}}</view>
+            <view class='table1 padding' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis;'> {{arrItem.time}}</view>
+          </view>
+        </label>
+      </checkbox-group>
+
+
+      <view style='width: 100%;float:left;height:80rpx;margin-top:50rpx;'>
+        <view class='btn'>
+          <view class='btn-cover' bindtap='zAdd'>新增</view>
+          <view class='btn-cover' bindtap='edit'>{{checked ? "取消":"编辑"}}</view>
+          <view class='btn-cover' bindtap='{{oidList.length >0 ? "deleteB":"deleteA"}}'>{{oidList.length > 0 ? "确认" : "删除"}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='model' wx:if="{{model}}">
+      <view class="page-section">
+        <view class="weui-cells__title">商品编号</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input name="oid" value='{{result.oid}}' class="weui-input" maxlength="20" placeholder='请输入商品编号' />
+          </view>
+        </view>
+      </view>
+      <view class="page-section">
+        <view class="weui-cells__title">人员编号</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input name="uid" value='{{result.uid}}'  class="weui-input" maxlength="20" placeholder='请输入人员编号' />
+          </view>
+        </view>
+      </view>
+      <view class="page-section">
+        <view class="weui-cells__title">商品</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input name="name" value='{{result.name}}'  class="weui-input" maxlength="20" placeholder='请输入商品' />
+          </view>
+        </view>
+      </view>
+      <view class="page-section">
+        <view class="weui-cells__title">购买时间</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input name="buytime" value='{{result.buytime}}' class="weui-input" maxlength="20" placeholder='请输入购买时间' />
+          </view>
+        </view>
+      </view>
+      <view class="page-section">
+        <view style='width: 100%;float:left;height:80rpx;margin-top:20rpx;'>
+          <view class='btn'>
+            <button class='btn-cover' bindtap='cancel'>取消</button>
+            <button class='btn-cover' formType="submit">确认</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </form>
+</view>
