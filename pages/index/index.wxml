@@ -24,7 +24,7 @@
         <view class='btn'>
           <view class='btn-cover' bindtap='zAdd'>新增</view>
           <view class='btn-cover' bindtap='edit'>{{checked ? "取消":"编辑"}}</view>
-          <view class='btn-cover' bindtap='{{oidList.length >0 ? "deleteB":"deleteA"}}'>{{oidList.length > 0 ? "确认" : "删除"}}</view>
+          <view class='btn-cover' bindtap='{{oidList.length&&isdelete >0 ? "deleteB":"deleteA"}}'>{{oidList.length&&isdelete > 0 ? "确认" : "删除"}}</view>
         </view>
       </view>
     </view>
